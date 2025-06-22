@@ -5,7 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ポートフォリオ - 添野真之介  </title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
 </head>
+<style>
+    #home h1 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 4em;
+    }
+  /* モーダルの背景 */
+  #modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* モーダル内の画像 */
+  #modal-content {
+    position: relative;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80vw;
+    max-height: 80vh;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+
+  #modal-img {
+    display: block;
+    max-width: 100%;
+    max-height: 70vh;
+    margin: auto;
+  }
+
+  /* 閉じるボタン */
+  #close-button {
+    position: absolute;
+    top: 5px; right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+  }
+  .responsive-img,
+  .responsive-video {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin-bottom: 1em;
+  }
+</style>
+<script>
+  function openModal(src) {
+    document.getElementById("modal-img").src = src;
+    document.getElementById("modal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+
+  // ✕ボタンだけで閉じるようにしたい場合は、下記のコメントを外してください
+  // document.getElementById("close-button").addEventListener("click", closeModal);
+</script>
 <script>
     function showPage(pageId) {
         // 全てのページを非表示にする
@@ -29,26 +96,20 @@
         <ul>
             <li><a href="#" onclick="showPage('home')" class="nav-link active">ホーム</a></li>
             <li><a href="#" onclick="showPage('about')" class="nav-link">詳細プロフィール</a></li>
-            <li><a href="#" onclick="showPage('programming')" class="nav-link">プログラミング</a></li>
-            <li><a href="#" onclick="showPage('activities')" class="nav-link">部活動・課外活動</a></li>
-            <li><a href="#" onclick="showPage('projects')" class="nav-link">プロジェクト</a></li>
-            <li><a href="#" onclick="showPage('sitemap')" class="nav-link">サイトマップ</a></li>
+            <li><a href="#" onclick="showPage('activities')" class="nav-link">スキル概要</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <!-- ==== ホームページ（簡単な自己紹介） ==== -->
         <div id="home" class="page active">
-            <h1>ポートフォリオ</h1>
+            <h1>Portfolio</h1>
             
             <!-- プロフィール画像エリア -->
             <div class="profile-image">
                 <!-- 画像がある場合は下のコメントアウトを外して、画像パスを設定 -->
-                <!-- <img src="your-profile-image.jpg" alt="プロフィール画像"> -->
+                <img src="ore1.jpg" alt="プロフィール画像">
                 <!-- 画像がない場合は下のプレースホルダーを使用 -->
-                <div class="profile-placeholder">
-                    写真を追加
-                </div>
             </div>
 
             <!-- 基本情報 -->
@@ -71,7 +132,7 @@
                 <div class="info-item">
                     <strong>趣味・興味</strong>
                     <!-- ここに趣味や興味を入力 -->
-                    プログラミング、読書、映画鑑賞
+                    アニメ、読書、ゲーム
                 </div>
             </div>
 
@@ -81,7 +142,7 @@
                 <!-- ここに簡単な自己紹介文を入力 -->
                 こんにちは！私は情報工学を専攻している大学3年生です。
                 プログラミングに興味を持ち、様々な技術を学びながら実践的な開発経験を積んでいます。
-                特にWebアプリケーション開発に力を入れており、チームでの開発も経験しています。
+                今はpythonの学習に力を入れており、チームでの開発も経験しています。
                 新しい技術への学習意欲が高く、問題解決に取り組むことが好きです。
             </p>
 
@@ -96,6 +157,22 @@
                         <li>C</li>
                         <li>HTML/CSS</li>
                         <li>SQL</li>
+                        <li>R</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>レンダリングソフト</h4>
+                    <ul class="skill-list">
+                        <!-- ここにプログラミング言語を追加 -->
+                        <li>blender</li>
+                        <li>Maya</li>
+                    </ul>
+                    </div>
+                    <div class="skill-category">
+                    <h4>ゲームエンジン</h4>
+                    <ul class="skill-list">
+                        <!-- ここにプログラミング言語を追加 -->
+                        <li>UnrealEngine5</li>
                     </ul>
                 </div>
             </div>
@@ -108,7 +185,7 @@
             <h2>私について</h2>
             <p>
                 <!-- ここに詳細な自己紹介を入力 -->
-                私は幼い頃からコンピューターに興味を持ち、高校時代にプログラミングと出会いました。
+                私は幼い頃にコンピューターに興味を持ち、大学時代にプログラミングと出会いました。
                 大学では情報工学を専攻し、理論的な学習と実践的な開発の両方に取り組んでいます。
                 チームワークを大切にし、常に新しいことを学ぶ姿勢を持っています。
             </p>
@@ -121,19 +198,32 @@
                     <p>
                         <!-- ここに大学での学習内容を入力 -->
                         コンピューターサイエンスの基礎から応用まで幅広く学習。
-                        特にソフトウェア工学、データ構造、アルゴリズム、Web開発に力を入れています。
+                        特にソフトウェア工学、データ構造に力を入れています。
+                    </p>
+                    <p>
+                        <!-- ここに大学での学習内容を入力 -->
+                        大学の部活動では、マイクロコンピューター研究部に所属し、部長として3年間活動しています。
                     </p>
                 </div>
                 <div class="activity-item">
-                    <div class="activity-date">2020年4月 - 2023年3月</div>
-                    <div class="activity-title">桶川高等学校 卒業</div>
-                    <p>
-                        <!-- ここに高校での活動を入力 -->
-                        理数系科目を中心に学習。情報の授業でプログラミングの基礎を学び、
-                        コンピューターサイエンスへの興味を深めました。
+                    <div class="activity-date">2024年10月</div>
+                        <p>
+                        自作PCを組み立る。ここで、ハードウェアの知識を深め、PCの構成なども学びました。
                     </p>
                 </div>
-                <!-- 必要に応じて項目を追加 -->
+                <div class="activity-item">
+<<<<<<< HEAD
+                    <div class="activity-date">2020年4月 - 2023年3月</div>
+                    <div class="activity-title">桶川高等学校 卒業</div>
+=======
+                    <div class="activity-date">2019年4月 - 2022年3月</div>
+                    <div class="activity-title">埼玉県立桶川高等学校 卒業</div>
+>>>>>>> 483f8746928fefaec313dfcc1830509a06cc7d2f
+                    <p>
+                        <!-- ここに大学での学習内容を入力 -->
+                        部活動はソフトテニス部に所属し、中学から合わせ6年間活動しました。
+                    </p>
+                </div>
             </div>
 
             <h2>目標・将来の展望</h2>
@@ -145,228 +235,95 @@
             </p>
         </div>
 
-        <!-- ==== プログラミングページ ==== -->
-        <div id="programming" class="page">
-            <h1>プログラミング</h1>
-
-            <h2>プログラミングスキル</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>言語（習熟度順）</h4>
-                    <ul class="skill-list">
-                        <!-- ここにプログラミング言語を習熟度順で追加 -->
-                        <li>Python - 2年間の学習・開発経験</li>
-                        <li>HTML/CSS - 2年の学習・開発経験</li>
-                        <li>C - 1年の学習・開発経験</li>
-                        <li>SQL - 基本的なクエリ操作</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h4>開発ツール・環境</h4>
-                    <ul class="skill-list">
-                        <!-- ここに開発ツールを追加 -->
-                        <li>Git/GitHub - バージョン管理</li>
-                        <li>VS Code - 主要開発環境</li>
-                        <li>MySQL - データベース管理</li>
-                        <li>Linux - 基本的なコマンド操作</li>
-                    </ul>
-                </div>
-            </div>
-
-            <h2>プログラミング学習歴</h2>
-            <div class="activity-timeline">
-                <div class="activity-item">
-                    <div class="activity-date">2024年1月 - 現在</div>
-                    <div class="activity-title">React・モダンJavaScript開発</div>
-                    <p>
-                        <!-- ここに学習内容を入力 -->
-                        React Hooksを使用したモダンなフロントエンド開発を学習。
-                        状態管理、コンポーネント設計、APIとの連携などを実践的に学んでいます。
-                    </p>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-date">2023年4月 - 2023年12月</div>
-                    <div class="activity-title">Web開発基礎</div>
-                    <p>
-                        <!-- ここに学習内容を入力 -->
-                        HTML、CSS、JavaScriptの基礎から始め、Node.jsを使った
-                        サーバーサイド開発まで学習。簡単なWebアプリケーションを複数作成しました。
-                    </p>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-date">2022年4月 - 2023年3月</div>
-                    <div class="activity-title">Python・プログラミング基礎</div>
-                    <p>
-                        <!-- ここに学習内容を入力 -->
-                        大学入学と同時にPythonを使ったプログラミングの基礎を学習。
-                        データ構造、アルゴリズム、オブジェクト指向プログラミングを習得しました。
-                    </p>
-                </div>
-                <!-- 必要に応じて項目を追加 -->
-            </div>
-
-            <h2>制作物</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h4>Webアプリケーション名</h4>
-                    <p>
-                        <!-- ここにプロジェクトの説明を入力 -->
-                        React + Node.jsで作成したタスク管理アプリケーション。
-                        ユーザー認証、CRUD操作、リアルタイム更新機能を実装。
-                    </p>
-                    <div class="tech-tags">
-                        <!-- ここに使用技術のタグを追加 -->
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Express</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h4>Pythonスクリプト</h4>
-                    <p>
-                        <!-- ここにプロジェクトの説明を入力 -->
-                        データ分析・可視化を行うPythonスクリプト。
-                        CSVファイルの読み込み、統計処理、グラフ生成機能を実装。
-                    </p>
-                    <div class="tech-tags">
-                        <!-- ここに使用技術のタグを追加 -->
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">pandas</span>
-                        <span class="tech-tag">matplotlib</span>
-                        <span class="tech-tag">numpy</span>
-                    </div>
-                </div>
-                <!-- 必要に応じてプロジェクトカードを追加 -->
-            </div>
-        </div>
-
         <!-- ==== 部活動・課外活動ページ ==== -->
         <div id="activities" class="page">
-            <h1>部活動・課外活動</h1>
+            <h1>My skills</h1>
 
-            <h2>部活動</h2>
+            <h2>Skills</h2>
+                        <div class="activity-timeline">
+                <div class="activity-item">
+                    <div class="activity-date">スキルを学ぶ場</div>
+                    <div class="activity-title">講義</div>
+                    <p>
+                    私の所属している大学の講義では、プログラミングやデータサイエンスの基礎から応用まで幅広く学んでいるため、様々な技術を身につけています。
+                    </p>
+                </div>
+                                <div class="activity-item">
+                    <div class="activity-title">制作物</div>
+                    <h4>主な作品：</h4>
+                    <ul>
+    <li>
+        <img src="授業Web1.png" alt="作品1の画像"  class="responsive-img" onclick="openModal(this.src)" style="cursor: zoom-in;">
+        <p>これは、授業内で作成した自己紹介のWebサイトです。コメントを打てるようにしたりなど、授業での内容を応用したものを実装しました。</p>
+    </li>
+    <li>
+        <img src="授業goolecolab.png" alt="作品2の画像"  class="responsive-img" onclick="openModal(this.src)" style="cursor: zoom-in;">
+        <p>これは、授業内でGoole Colabを使用し自分のGoole Driveにアクセスし、Goole Drive内にあるファイルを参照し作成した、商品別の売り上げ推移を可視化したものです。(python)</p>
+    </li>
+</ul>
+                </div>
+            </div>
+
+<!-- モーダル表示部分 -->
+<div id="modal" onclick="closeModal()">
+  <div id="modal-content">
+    <span id="close-button">&times;</span>
+    <img id="modal-img" src="">
+  </div>
+</div>
+
             <div class="activity-timeline">
                 <div class="activity-item">
-                    <div class="activity-date">2022年4月 - 現在</div>
-                    <div class="activity-title">コンピューター研究会</div>
+                    <div class="activity-date">スキルを学ぶ場</div>
+                    <div class="activity-title">マイクロコンピューター研究部</div>
                     <p>
                         <!-- ここに部活動の内容を入力 -->
-                        大学のコンピューター研究会に所属し、プログラミング技術の向上に取り組んでいます。
-                        勉強会の企画・運営、技術発表、共同プロジェクトの開発などを行っています。
+                        マイクロコンピューター研究部に所属し、プログラミングやCGの技術の向上に取り組んでいます。
+                        部長としての企画・運営、技術発表、共同プロジェクトの開発などを行っています。
                     </p>
                     <h4>主な活動内容：</h4>
                     <ul>
                         <!-- ここに具体的な活動内容を追加 -->
-                        <li>週1回の技術勉強会の企画・運営</li>
+                        <li>週2回の部活動</li>
                         <li>学園祭での展示発表</li>
                         <li>チーム開発プロジェクト</li>
                         <li>新入生向けプログラミング講座の講師</li>
                     </ul>
                 </div>
                 <div class="activity-item">
-                    <div class="activity-date">2019年4月 - 2022年3月</div>
-                    <div class="activity-title">高校：科学部</div>
+                    <div class="activity-title">制作物</div>
                     <p>
-                        <!-- ここに高校時代の部活動を入力 -->
-                        高校時代は科学部に所属し、理数系の実験・研究活動に参加しました。
-                        論理的思考力と問題解決能力を培うことができました。
+                        <!-- ここに制作物の内容を入力 -->
+                        プログラミング言語を用いたアプリケーションやCG作品の制作を行っています。
                     </p>
-                    <h4>主な活動内容：</h4>
+                    <h4>主な作品：</h4>
                     <ul>
-                        <!-- ここに具体的な活動内容を追加 -->
-                        <li>物理・化学実験の企画・実施</li>
-                        <li>科学発表会での研究発表</li>
-                        <li>地域の小学生向け科学教室のサポート</li>
-                    </ul>
+    <li>
+        <img src="konpo.png" alt="作品1の画像"  class="responsive-img" onclick="openModal(this.src)" style="cursor: zoom-in;">
+        <p>作品1：この作品はコンポをテーマにしたものです。オブジェクトの切り出し、抽出などを駆使して作成しました。（blender）</p>
+    </li>
+    <li>
+        <img src="リンゴ.png" alt="作品2の画像"  class="responsive-img"onclick="openModal(this.src)" style="cursor: zoom-in;">
+        <p>作品2：この作品はリンゴをテーマにしたものでシェーダーディターの機能を活かして作りました。カメラ機能による光の加減を調節しました。（blender）</p>
+    </li>
+    <li>
+        <img src="syougi.png" alt="作品3の画像"  class="responsive-img" onclick="openModal(this.src)" style="cursor: zoom-in;">
+        <p>作品3：pythonを使用し駒のアシストがでる将棋のゲームを作成しました。現状、将棋ゲームでアシスト機能がでるアプリが自分が知る限り、そこまで多くなく、自分で作ってみました。（pygame）<p>
+    </li>
+    <li>
+  <video controls class="responsive-video">
+    <source src="球体1.mp4" type="video/mp4">
+    お使いのブラウザは video タグをサポートしていません。
+  </video>
+  <p>作品4：Mayaで作成した最初のアニメーションです。球体の回転をわかりやすくするためにカメラの位置を調整しました。（Maya）</p>
+</li>
+    <li>
+  <video controls class="responsive-video">
+    <source src="ゴミ神社.mp4" type="video/mp4">
+    お使いのブラウザは video タグをサポートしていません。
+  </video>
+  <p>作品4：blenderで作成したアニメーションです。流体シミュレーションを使用して、神聖な神社の雰囲気を表現しました。（blender）</p>
+</li>
+</ul>
                 </div>
-                <!-- 必要に応じて項目を追加 -->
             </div>
-
-            <h2>課外活動・ボランティア</h2>
-            <div class="activity-timeline">
-                <div class="activity-item">
-                    <div class="activity-date">2023年8月</div>
-                    <div class="activity-title">地域プログラミング教室ボランティア</div>
-                    <p>
-                        <!-- ここにボランティア活動の内容を入力 -->
-                        地域の小中学生向けプログラミング教室でボランティア講師として参加。
-                        Scratchを使った基本的なプログラミング教育に携わりました。
-                    </p>
-                </div>
-                <div class="activity-item">
-                    <div class="activity-date">2023年3月</div>
-                    <div class="activity-title">ハッカソン参加</div>
-                    <p>
-                        <!-- ここにハッカソンなどのイベント参加を入力 -->
-                        大学主催の48時間ハッカソンに参加。チームでWebアプリケーションを開発し、
-                        プレゼンテーションを行いました。チームワークと短期間での開発スキルを学びました。
-                    </p>
-                </div>
-                <!-- 必要に応じて項目を追加 -->
-            </div>
-
-            <h2>受賞・成果</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h4>大学ハッカソン</h4>
-                    <p>
-                        <!-- ここに受賞内容を入力 -->
-                        2023年春季ハッカソンにて「アイデア賞」を受賞。
-                        地域課題解決をテーマとしたWebアプリケーションを開発しました。
-                    </p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">チーム開発</span>
-                        <span class="tech-tag">UI/UX設計</span>
-                        <span class="tech-tag">プレゼンテーション</span>
-                    </div>
-                </div>
-                <!-- 必要に応じて受賞歴を追加 -->
-            </div>
-        </div>
-
-        <!-- ==== プロジェクトページ ==== -->
-        <div id="projects" class="page">
-            <h1>プロジェクト一覧</h1>
-
-            <h2>個人プロジェクト</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h4>プロジェクト名1</h4>
-                    <p>
-                        <!-- ここにプロジェクトの詳細説明を入力 -->
-                        個人で開発したWebアプリケーション。ユーザーが日記を記録し、
-                        データを可視化できる機能を持つアプリケーションです。
-                        レスポンシブデザインを採用し、モバイル端末でも利用可能です。
-                    </p>
-                    <h4>主な機能：</h4>
-                    <ul>
-                        <li>ユーザー認証機能</li>
-                        <li>日記の投稿・編集・削除</li>
-                        <li>データ可視化（グラフ表示）</li>
-                        <li>検索・フィルタリング機能</li>
-                    </ul>
-                    <div class="tech-tags">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">Chart.js</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h4>プロジェクト名2</h4>
-                    <p>
-                        <!-- ここにプロジェクトの詳細説明を入力 -->
-                        Pythonで開発したデータ分析ツール。CSVファイルを読み込み、
-                        統計処理・可視化を行うスクリプトです。
-                    </p>
-                    <h4>主な機能：</h4>
-                    <ul>
-                        <li>CSVファイルの読み込み・処理</li>
-                        <li>基本統計量の計算</li>
-                        <li>データの可視化（グラフ生成）</li>
-                        <li>結果のレポート出力</li>
-                    </ul>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech
