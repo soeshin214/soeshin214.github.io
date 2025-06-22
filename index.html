@@ -51,11 +51,13 @@
     color: #333;
     cursor: pointer;
   }
-   .responsive-img {
+  .responsive-img,
+  .responsive-video {
     width: 100%;
     max-width: 500px;
     height: auto;
-    cursor: zoom-in;
+    display: block;
+    margin-bottom: 1em;
   }
 </style>
 <script>
@@ -199,7 +201,7 @@
                 <div class="activity-item">
                     <div class="activity-date">2024年10月</div>
                         <p>
-                        自作PCを組み立る。ここで、ハードウェアの知識を深め、PCの構成やトラブルシューティングのスキルを向上させました。
+                        自作PCを組み立る。ここで、ハードウェアの知識を深め、PCの構成なども学びました。
                     </p>
                 </div>
                 <div class="activity-item">
@@ -258,7 +260,6 @@
   </div>
 </div>
 
-
             <div class="activity-timeline">
                 <div class="activity-item">
                     <div class="activity-date">スキルを学ぶ場</div>
@@ -297,6 +298,15 @@
         <img src="syougi.png" alt="作品3の画像"  class="responsive-img" onclick="openModal(this.src)" style="cursor: zoom-in;">
         <p>作品3：pythonを使用し駒のアシストがでる将棋のゲームを作成しました。現状、将棋ゲームでアシスト機能がでるアプリが自分が知る限り、そこまで多くなく、自分で作ってみました。（pygame）<p>
     </li>
+    <li>
+  <video controls class="responsive-video">
+    <source src="球体1.mp4" type="video/mp4">
+    お使いのブラウザは video タグをサポートしていません。
+  </video>
+  <p>作品4：Mayaで作成した最初のアニメーションです。球体の回転をわかりやすくするためにカメラの位置を調整しました。（Maya）</p>
+</li>
 </ul>
+
+
                 </div>
             </div>
