@@ -12,17 +12,6 @@
     font-family: 'Pinyon Script', cursive;
     font-size: 4em;
     }
-.banner {
-    width: 100%;
-    max-width: 1000px;
-    height: 150px; /* 横長感を出すために高さを抑える */
-    object-fit: cover; /* トリミングで中央をキープ */
-    object-position: 5% 5%; /* 左上を基準にトリミング */;
-    display: block;
-    margin: 0 auto 30px;
-    border-radius: 10px; /* 丸みでバナー感アップ */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 影もつけると◎ */
-}
   /* モーダルの背景 */
   #modal {
     display: none;
@@ -61,6 +50,12 @@
     font-weight: bold;
     color: #333;
     cursor: pointer;
+  }
+   .responsive-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    cursor: zoom-in;
   }
 </style>
 <script>
@@ -106,7 +101,6 @@
     <div class="container">
         <!-- ==== ホームページ（簡単な自己紹介） ==== -->
         <div id="home" class="page active">
-            <img src="ore2.jpg" alt="Portfolioバナー" class="banner">
             <h1>Portfolio</h1>
             
             <!-- プロフィール画像エリア -->
@@ -169,7 +163,7 @@
                     <ul class="skill-list">
                         <!-- ここにプログラミング言語を追加 -->
                         <li>blender</li>
-                        <li>Mya</li>
+                        <li>Maya</li>
                     </ul>
                 </div>
             </div>
@@ -203,7 +197,7 @@
                     </p>
                 </div>
                 <div class="activity-item">
-                    <div class="activity-date">20243年10月</div>
+                    <div class="activity-date">2024年10月</div>
                         <p>
                         自作PCを組み立る。ここで、ハードウェアの知識を深め、PCの構成やトラブルシューティングのスキルを向上させました。
                     </p>
@@ -245,11 +239,11 @@
                     <h4>主な作品：</h4>
                     <ul>
     <li>
-        <img src="授業Web1.png" alt="作品1の画像" width="500" onclick="openModal(this.src)" style="cursor: zoom-in;">
+        <img src="授業Web1.png" alt="作品1の画像"  class="responsive-img" onclick="openModal(this.src)" style="cursor: zoom-in;">
         <p>これは、授業内で作成した自己紹介のWebサイトです。コメントを打てるようにしたりなど、授業での内容を応用したものを実装しました。</p>
     </li>
     <li>
-        <img src="授業goolecolab.png" alt="作品2の画像" width="500" onclick="openModal(this.src)" style="cursor: zoom-in;">
+        <img src="授業goolecolab.png" alt="作品2の画像"  class="responsive-img" onclick="openModal(this.src)" style="cursor: zoom-in;">
         <p>これは、授業内でGoole Colabを使用し自分のGoole Driveにアクセスし、Goole Drive内にあるファイルを参照し作成した、商品別の売り上げ推移を可視化したものです。(python)</p>
     </li>
 </ul>
@@ -292,15 +286,15 @@
                     <h4>主な作品：</h4>
                     <ul>
     <li>
-        <img src="konpo.png" alt="作品1の画像" width="500" onclick="openModal(this.src)" style="cursor: zoom-in;">
+        <img src="konpo.png" alt="作品1の画像"  class="responsive-img" onclick="openModal(this.src)" style="cursor: zoom-in;">
         <p>作品1：この作品はコンポをテーマにしたものです。オブジェクトの切り出し、抽出などを駆使して作成しました。（blender）</p>
     </li>
     <li>
-        <img src="リンゴ.png" alt="作品2の画像" width="500" onclick="openModal(this.src)" style="cursor: zoom-in;">
+        <img src="リンゴ.png" alt="作品2の画像"  class="responsive-img"onclick="openModal(this.src)" style="cursor: zoom-in;">
         <p>作品2：この作品はリンゴをテーマにしたものでシェーダーディターの機能を活かして作りました。カメラ機能による光の加減を調節しました。（blender）</p>
     </li>
     <li>
-        <img src="syougi.png" alt="作品3の画像" width="500" onclick="openModal(this.src)" style="cursor: zoom-in;">
+        <img src="syougi.png" alt="作品3の画像"  class="responsive-img" onclick="openModal(this.src)" style="cursor: zoom-in;">
         <p>作品3：pythonを使用し駒のアシストがでる将棋のゲームを作成しました。現状、将棋ゲームでアシスト機能がでるアプリが自分が知る限り、そこまで多くなく、自分で作ってみました。（pygame）<p>
     </li>
 </ul>
